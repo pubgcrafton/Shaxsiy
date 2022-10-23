@@ -121,4 +121,4 @@ else:
         if "SHAXSIY_DO_NOT_RESTART" in os.environ:
             del os.environ["HIKKA_DO_NOT_RESTART"]
 
-        main.hikka.main()  # Execute main function
+        main.shaxsiy.main()  # Execute main function
