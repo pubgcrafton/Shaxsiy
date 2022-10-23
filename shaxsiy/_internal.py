@@ -8,7 +8,7 @@ def restart():
         print("Got in a loop, exiting")
         sys.exit(0)
 
-    print("🔄 Qayta ishga tushirish...")
+    print("🔄 Restarting...")
 
     atexit.register(
         lambda: os.execl(
