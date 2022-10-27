@@ -3,23 +3,23 @@
 
 runin() {
 	# Runs the arguments, piping stderr to logfile
-	{ "$@" 2>>../premium-install.log || return $?; } | while read -r line; do
-		printf "%s\n" "$line" >>../premium-install.log
+	{ "$@" 2>>../shaxsiy-install.log || return $?; } | while read -r line; do
+		printf "%s\n" "$line" >>../shaxsiy-install.log
 	done
 }
 
 runout() {
 	# Runs the arguments, piping stderr to logfile
-	{ "$@" 2>>premium-install.log || return $?; } | while read -r line; do
-		printf "%s\n" "$line" >>premium-install.log
+	{ "$@" 2>>shaxsiy-install.log || return $?; } | while read -r line; do
+		printf "%s\n" "$line" >>shaxsiy-install.log
 	done
 }
 
 errorin() {
-	cat ../premium-install.log
+	cat ../shaxsiy-install.log
 }
 errorout() {
-	cat premium-install.log
+	cat shaxsiy-install.log
 }
 
 SUDO_CMD=""
@@ -46,25 +46,25 @@ printf "\r\033[0;34mPreparing for installation...\e[0m"
 
 touch premium-install.log
 if [ ! x"$SUDO_USER" = x"" ]; then
-	chown "$SUDO_USER:" premium-install.log
+	chown "$SUDO_USER:" shaxsiy-install.log
 fi
 
-if [ -d "Premium/premium" ]; then
-	cd Premium || {
+if [ -d "Shaxsiy/shaxsiy" ]; then
+	cd Shaxsiy || {
 		printf "\rError: Install git package and re-run installer"
 		exit 6
 	}
 	DIR_CHANGED="yes"
 fi
 if [ -f ".setup_complete" ]; then
-	# If premium is already installed by this script
+	# If shaxsiy is already installed by this script
 	PYVER=""
 	if echo "$OSTYPE" | grep -qE '^linux-gnu.*'; then
 		PYVER="3"
 	fi
 	printf "\rExisting installation detected"
 	clear
-	"python$PYVER" -m premium "$@"
+	"python$PYVER" -m shaxsiy "$@"
 	exit $?
 elif [ "$DIR_CHANGED" = "yes" ]; then
 	cd ..
@@ -72,7 +72,7 @@ fi
 
 ##############################################################################
 
-echo "Installing..." >premium-install.log
+echo "Installing..." >shaxsiy-install.log
 
 if echo "$OSTYPE" | grep -qE '^linux-gnu.*' && [ -f '/etc/debian_version' ]; then
 	PKGMGR="apt install -y"
@@ -93,7 +93,7 @@ elif echo "$OSTYPE" | grep -qE '^darwin.*'; then
 	PKGMGR="brew install"
 	PYVER="3"
 else
-	printf "\r\033[1;31mUnrecognised OS.\e[0m Please follow 'Manual installation' at \033[0;94mhttps://github.com/pubgcrafton/Premium/#-installation\e[0m"
+	printf "\r\033[1;31mUnrecognised OS.\e[0m Please follow 'Manual installation' at \033[0;94mhttps://github.com/pubgcrafton/Shaxsiy/#-installation\e[0m"
 	exit 1
 fi
 
@@ -129,13 +129,13 @@ printf "\n\r\033[0;34mCloning repo...\e[0m"
 ##############################################################################
 
 # shellcheck disable=SC2086
-${SUDO_CMD}rm -rf Premium
+${SUDO_CMD}rm -rf Shaxsiy
 # shellcheck disable=SC2086
-runout ${SUDO_CMD}git clone https://github.com/pubgcrafton/Premium/ || {
+runout ${SUDO_CMD}git clone https://github.com/pubgcrafton/Shaxsiy/ || {
 	errorout "Clone failed."
 	exit 3
 }
-cd Premium || {
+cd Shaxsiy || {
 	printf "\r\033[0;33mRun: \033[1;33mpkg install git\033[0;33m and restart installer"
 	exit 7
 }
@@ -150,13 +150,13 @@ runin "$SUDO_CMD python$PYVER" -m pip install -r requirements.txt --upgrade --us
 	errorin "Requirements failed!"
 	exit 4
 }
-rm -f ../premium-install.log
+rm -f ../shaxsiy-install.log
 touch .setup_complete
 
 printf "\r\033[K\033[0;32mDependencies installed!\e[0m"
 printf "\n\033[0;32mStarting...\e[0m\n\n"
 
-${SUDO_CMD}"python$PYVER" -m premium "$@" || {
+${SUDO_CMD}"python$PYVER" -m shaxsiy "$@" || {
 	printf "\033[1;31mPython scripts failed\e[0m"
 	exit 5
 }
