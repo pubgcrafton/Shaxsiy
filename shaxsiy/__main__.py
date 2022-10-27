@@ -91,7 +91,7 @@ else:
                     "-q",
                     "--disable-pip-version-check",
                     "--no-warn-script-location",
-                    "shaxsiy-tl",
+                    "telethon-mod",
                 ],
                 check=True,
             )
