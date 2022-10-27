@@ -29,3 +29,4 @@ def restart():
     os.environ["SHAXSIY_DO_NOT_RESTART"] = "1"
 
     sys.exit(0)
+
