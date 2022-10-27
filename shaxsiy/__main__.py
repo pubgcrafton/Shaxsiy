@@ -1,13 +1,5 @@
 """Entry point. Checks for user and starts main script"""
 
-#             █ █ ▀ █▄▀ ▄▀█ █▀█ ▀
-#             █▀█ █ █ █ █▀█ █▀▄ █
-#              © Copyright 2022
-#           https://t.me/hikariatama
-#
-# 🔒      Licensed under the GNU AGPLv3
-# 🌐 https://www.gnu.org/licenses/agpl-3.0.html
-
 import getpass
 import os
 import subprocess
@@ -75,7 +67,7 @@ else:
             if tuple(map(int, telethon.__version__.split("."))) < (1, 24, 10):
                 raise ImportError
         except ImportError:
-            print("🔄 Qayta o'rnatilmoqda Premium-TL...")
+            print("🔄 Qayta o'rnatilmoqda Shaxsiy-TL...")
             subprocess.run(
                 [
                     sys.executable,
@@ -118,7 +110,7 @@ else:
         deps(e)
 
     if __name__ == "__main__":
-        if "PREMIUM_DO_NOT_RESTART" in os.environ:
+        if "SHAXSIY_DO_NOT_RESTART" in os.environ:
             del os.environ["PREMIUM_DO_NOT_RESTART"]
 
-        main.premium.main()  # Execute main function
+        main.shaxsiy.main()  # Execute main function
