@@ -13,7 +13,7 @@ if (
     and all(trigger not in os.environ for trigger in {"OKTETO", "DOCKER", "GOORM"})
 ):
     print("🚫" * 15)
-    print("You attempted to run Premium on behalf of root user")
+    print("You attempted to run Shaxsiy on behalf of root user")
     print("Please, create a new user and restart script")
     print("If this action was intentional, pass --root argument instead")
     print("🚫" * 15)
@@ -91,7 +91,7 @@ else:
                     "-q",
                     "--disable-pip-version-check",
                     "--no-warn-script-location",
-                    "hikka-tl",
+                    "shaxsiy-tl",
                 ],
                 check=True,
             )
@@ -111,6 +111,6 @@ else:
 
     if __name__ == "__main__":
         if "SHAXSIY_DO_NOT_RESTART" in os.environ:
-            del os.environ["PREMIUM_DO_NOT_RESTART"]
+            del os.environ["SHAXSIY_DO_NOT_RESTART"]
 
         main.shaxsiy.main()  # Execute main function
