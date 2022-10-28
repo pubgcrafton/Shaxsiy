@@ -5,7 +5,7 @@ import os
 
 def restart():
     if "SHAXSIY_DO_NOT_RESTART" in os.environ:
-        print("Loopga tushib qoldim, chiqish")
+        print("Got in a loop, exiting")
         sys.exit(0)
 
     print("🔄 Restarting...")
