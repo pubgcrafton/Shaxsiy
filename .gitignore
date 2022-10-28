@@ -131,11 +131,11 @@ dmypy.json
 
 *__pycache__
 *.pyc
-premium/api_token.py
-premium/loaded_modules
+shaxsiy/api_token.py
+shaxsiy/loaded_modules
 loaded_modules
-premium/debug_modules
-premium*.session*
+shaxsiy/debug_modules
+shaxsiy*.session*
 database-*.json
 *.swp
 .setup_complete
@@ -171,4 +171,4 @@ config.json
 vendor/
 Pipfile.lock
 
-premium.log.*
+shaxsiy.log.*
