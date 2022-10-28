@@ -84,7 +84,6 @@ else:
                     "uninstall",
                     "-y",
                     "telethon",
-                    "telethon-mod",
                 ],
                 check=False,
             )
@@ -99,7 +98,7 @@ else:
                     "-q",
                     "--disable-pip-version-check",
                     "--no-warn-script-location",
-                    "hikka-tl",
+                    "telethon-mod",
                 ],
                 check=True,
             )
