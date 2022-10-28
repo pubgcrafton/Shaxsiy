@@ -1,4 +1,4 @@
-name: premium
+name: shaxsiy
 services:
   worker:
     public: true
