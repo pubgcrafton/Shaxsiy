@@ -1,1 +1,1 @@
-web: python3 -m premium
+web: python3 -m shaxsiy
