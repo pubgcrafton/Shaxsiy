@@ -113,7 +113,7 @@ class Database(dict):
                 "shaxsiy-assets",
                 "🌆 Shaxsiy aktivlaringiz shu yerda saqlanadi",
                 archive=True,
-                avatar="",
+                avatar="https://siasky.net/RADr9pkd_DVYBTpc_DF_BNe1tot5AZNoVk1APEJu1_II2w",
             )
         except ChannelsTooMuchError:
             self._assets = None
