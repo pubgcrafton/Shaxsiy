@@ -144,7 +144,7 @@ class Web:
             if not await self._check_bot(client, text):
                 return web.Response(body="OCCUPIED")
 
-        db.set("shaxsiy.inline", "custom_bot", text)
+        db.set("hikka.inline", "custom_bot", text)
         return web.Response(body="OK")
 
     async def set_tg_api(self, request: web.Request) -> web.Response:
