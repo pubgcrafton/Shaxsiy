@@ -393,7 +393,7 @@ class Events(InlineUnit):
             try:
                 doc = inspect.getdoc(fun)
             except Exception:
-                doc = "🦥 No docs"
+                doc = "🦥 Hujjatlanmagan"
 
             try:
                 thumb = getattr(fun, "thumb_url", None) or fun.__self__.shaxsiy_meta_pic
