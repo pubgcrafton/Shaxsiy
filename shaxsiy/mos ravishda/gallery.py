@@ -422,7 +422,7 @@ class Gallery(InlineUnit):
                 inline_message_id=call.inline_message_id,
                 reply_markup=self._gallery_markup(unit_id),
             )
-            await call.answer("✅ Slideshow on")
+            await call.answer("✅ Slayd-shou yoqilgan")
         else:
             del self._units[unit_id]["slideshow"]
             await self.bot.edit_message_reply_markup(
