@@ -44,7 +44,7 @@ printf "\n\n\e[3;34;40m Installing...\e[0m\n\n"
 
 printf "\r\033[0;34mPreparing for installation...\e[0m"
 
-touch premium-install.log
+touch shaxsiy-install.log
 if [ ! x"$SUDO_USER" = x"" ]; then
 	chown "$SUDO_USER:" shaxsiy-install.log
 fi
