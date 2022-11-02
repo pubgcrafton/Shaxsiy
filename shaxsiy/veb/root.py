@@ -331,7 +331,7 @@ class Web:
         markup = InlineKeyboardMarkup()
         markup.add(
             InlineKeyboardButton(
-                "🔓 Authorize user",
+                "🔐 Foydalanuvchiga ruxsat berish",
                 callback_data=f"authorize_web_{token}",
             )
         )
@@ -372,7 +372,7 @@ class Web:
                 pass
 
         cities = (
-            ("<b>🏢 Possible cities:</b>\n\n" + "\n".join(cities) + "\n")
+            ("<b>🏢 Mumkin shaharlar:</b>\n\n" + "\n".join(cities) + "\n")
             if cities
             else ""
         )
@@ -384,7 +384,7 @@ class Web:
                 bot = user[0].inline.bot
                 msg = await bot.send_message(
                     user[1].tg_id,
-                    "💢🔐 <b>Click button below to confirm web application"
+                    "💢🔐 <b>Veb-ilovani tasdiqlash uchun quyidagi tugmani bosing"
                     f" ops</b>\n\n<b>Client IP</b>: {ips}\n{cities}\n<i>If you did not"
                     " request any codes, simply ignore this message</i>",
                     disable_web_page_preview=True,
