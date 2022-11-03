@@ -32,7 +32,7 @@ if (
 
 
 def deps(error):
-    print(f"{str(error)}\n🔄 Bog‘liqlarni o‘rnatishga urinilmoqda... Shunchaki kuting ⏱")
+    print(f"{str(error)}\n🔄 Bog'liqlarni o'rnatishga urinish... Shunchaki kuting ⏱")
 
     subprocess.run(
         [
@@ -75,7 +75,7 @@ else:
             if tuple(map(int, telethon.__version__.split("."))) < (1, 24, 10):
                 raise ImportError
         except ImportError:
-            print("🔄 Reinstalling Shaxsiy-TL...")
+            print("🔄 Qayta o'rnatilmoqda Shaxsiy-TL...")
             subprocess.run(
                 [
                     sys.executable,
